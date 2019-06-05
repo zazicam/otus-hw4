@@ -25,7 +25,8 @@ if(BUILD_DOCUMENTATION)
 		COMMENT "Generating API documentation with Doxygen"
 		VERBATIM)
 
-	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION share/doc)
+	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/doxygen/html DESTINATION share/doc)
+
 endif()
 
 add_executable(printer main.cpp)
