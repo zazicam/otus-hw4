@@ -2,7 +2,7 @@ language: cpp
 before_script:
 - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
 - sudo apt-get update -qq
-- sudo apt-get install doxygen cmake -y
+- sudo apt-get install cmake -y
 - cd ${TRAVIS_BUILD_DIR}
 script:
 - sudo cmake .
