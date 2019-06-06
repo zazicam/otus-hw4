@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(printer VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(ip_printer VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 include_directories(${PROJECT_BINARY_DIR})
 
@@ -25,19 +25,19 @@ if(BUILD_DOCUMENTATION)
 		COMMENT "Generating API documentation with Doxygen"
 		VERBATIM)
 
-	#install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/doxygen/html DESTINATION share/doc)
+	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/doxygen/html DESTINATION /usr/share/doc/ip_printer)
 
 endif()
 
-add_executable(printer main.cpp)
+add_executable(ip_printer main.cpp)
 
-set_target_properties(printer PROPERTIES
+set_target_properties(ip_printer PROPERTIES
 	CXX_STANDARD 14
 	CXX_STANDARD_REQUIRED ON
 	COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
 
-install(TARGETS printer RUNTIME DESTINATION bin)
+install(TARGETS ip_printer RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
